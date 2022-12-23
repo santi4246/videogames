@@ -5,45 +5,34 @@ const { isUuid } = require('uuidv4');
 
 async function listGames () {
     let options = {headers: {"Accept-Encoding": "gzip,deflate,compress"}};
-        const api = await axios.get(`https://api.rawg.io/api/games?key=${APIKEY}`, options);
-        let data = api.data.results;
         let i = 0;
-        let page = 2;
-        while (i < 4) {
-            let info = await axios(`https://api.rawg.io/api/games?key=${APIKEY}&page=${page}`);
-            data = data.concat(info.data.results);
+        let page = 1;        
+        let array = [];
+        let games = [];
+        while (i < 5) {
+            let info = await axios.get(`https://api.rawg.io/api/games?key=${APIKEY}&page=${page}`, options);            
+            info.data.results.map(e => {
+                array.push(e);
+            });
             page++;
             i++;
         }
-        const videogames = [];
-        for (let i = 0; i < data.length; i++) {
-            let game = {
-                id: data[i].id,
-                name: data[i].name,
-                img: data[i].background_image,
-                genres: data[i].genres.map(e => e.name),
-                description: data[i].tags.map(e => e.name),
-                launch: data[i].released,
-                rating: data[i].rating,
-                platforms: data[i].platforms.map(e => e.platform.name)
-            }
-            videogames.push(game);
-        }
         let gamesDB = await Videogame.findAll({include: [{model: Genre}, {model: Platform}]});
-        for (let i = 0; i < gamesDB.length; i++) {
-            let game = {
-                id: gamesDB[i].id,
-                name: gamesDB[i].name,
-                genres: gamesDB[i].genres.map(e => e.name),
-                description: gamesDB[i].description,
-                launch: gamesDB[i].launch,
-                rating: gamesDB[i].rating,
-                platforms: gamesDB[i].platforms.map(e => e.name),
-                img: gamesDB[i].img
+        array = gamesDB.concat(array);
+        for (let i = 0; i < array.length; i++) {
+            let obj = {
+                id: array[i].id,
+                name: array[i].name,
+                genres: array[i].genres.map(e => e.name),
+                description: array[i].description,
+                launch: array[i].launch,
+                rating: array[i].rating,
+                platforms: array[i].platforms.map(e => e.platform.name),
+                img: array[i].img
             }
-            videogames.unshift(game);
+            games.push(obj);
         }        
-        return videogames;
+        return games;
 }
 
 module.exports = {
