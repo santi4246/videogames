@@ -1,13 +1,13 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Game App for Henry's bootcamp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
-  "author": "Henry",
+  "author": "Santiago L. Romero",
   "license": "ISC",
   "engines": {
     "node": ">=12.18.3",
