@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.landing {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;  
+  background-image: url('./Images/img-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+  font-family: 'Noto Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  height: max-content;
+  min-height: 92vh;
+  background-image: url('./Images/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 10px;
+  font-family: 'Noto Sans', sans-serif;
+}
+.main h3 {
+  font-size: 20px;
+}
+
+.container {  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10%;
+  row-gap: 0.9em;
+  justify-items: center;  
+  opacity: 1.8;
+  border-radius: 15px;
+  width: 80%;
+  height: 100%;
+}
+
+.loading {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;  
+  background-image: url('./Images/img-3.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 100px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.creation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  font-size: 16px;
+  background-image: url('./Images/img-5.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: 'Noto Sans', sans-serif;  
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 750px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

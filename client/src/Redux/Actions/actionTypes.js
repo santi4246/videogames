@@ -1,0 +1,11 @@
+export const CLEAR_PAGE = 'CLEAR_PAGE';
+export const ERROR = 'ERROR';
+export const FETCH_SERVER = 'FETCH_SERVER';
+export const GET_GENRES = 'GET_GENRES';
+export const GET_DETAIL = 'GET_DETAIL';
+export const SORT_BY_GENRE = 'SORT_BY_GENRE';
+export const SORT_BY_NAME = 'SORT_BY_NAME';
+export const SORT_BY_RATING = 'SORT_BY_RATING';
+export const SEARCH = 'SEARCH';
+export const POST_GAME = 'POST_GAME';
+export const CLEAR_STATE = 'CLEAR_STATE';

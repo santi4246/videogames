@@ -1,0 +1,64 @@
+.game {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    height: 92vh;
+    font-size: 12px;
+    background-image: url('../../Images/img-4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;    
+    font-family: 'Noto Sans', sans-serif;   
+}
+.img {
+    display: block;    
+    width: 50%;
+    height: 50%;
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+    top: 0;    
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    height: 65vh;
+    border: solid 2px black;
+    margin-top: 2.5em;
+    border-radius: 15px;
+    background-color: black;
+    opacity: 0.99;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 75%;
+    height: 100%;
+    margin: 20px 0;
+    color: var(--card-color-text);    
+}
+.card h3 {
+    padding: 0.5em 0;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5em;    
+}
+.info p {
+    padding: 0 0.5em;
+}
+.navbar {
+    display: flex;
+    justify-content: center;    
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    height: 8vh;
+    color: #fff;
+}
+.title {
+    align-self: center;
+    margin-left: 1.5em;
+}

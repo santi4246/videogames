@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    font-size: smaller;
+    color: #fff;
+    align-items: center;
+    margin-left: 1.5em;
+}
+.select {
+    display: flex;    
+    align-self: center;
+    padding: 3px 0;
+    margin-left: 0.5em;
+    border-radius: 10px;
+}

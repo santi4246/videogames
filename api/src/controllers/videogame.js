@@ -35,7 +35,7 @@ async function listGames () {
                     return e.name;
                 }
             }),
-            img: array[i].img
+            img: array[i].background_image || array[i].img
         }
         games.push(obj);
     }        

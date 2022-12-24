@@ -1,0 +1,77 @@
+.button {    
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px 30px;
+    position: fixed;
+    top: 60%;
+    left: 45%;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    animation: up 0.5s ease-in;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;    
+}
+
+.button:hover{    
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 35px var(--secondary-color);
+}
+.button::before{
+    position: absolute;
+    inset: 2px;    
+}
+.button span{
+    position: relative;
+    z-index: 1;
+}
+.button i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+.button i::before{
+    content: '';
+    position: absolute;
+    border: 2px solid var(--primary-color);
+    width: 10px;
+    height: 5px;
+    left: 80%;
+    top: -3.5px;    
+    background: var(--terciary-color);
+    transition: 0.5s;
+    transform: translateX(-50%);
+}
+.button:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+
+.button i::after{
+    content: '';
+    position: absolute;    
+    border: 2px solid var(--primary-color);
+    width: 10px;
+    height: 5px;
+    left: 20%;
+    bottom: -3.5px;    
+    background: var(--secondary-color);
+    transition: 0.5s;
+    transform: translateX(-50%);
+}
+.button:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
