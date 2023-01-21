@@ -84,7 +84,7 @@ export default function Create () {
     function handleSubmit (event) {
         event.preventDefault();
         setSubmit(true);
-        // dispatch(Post(input));
+        dispatch(Post(input));
         setInput({ name: '', description: '', launch: '', rating: '', genres: [], platforms: [], img: '' })
         setDatosGenres([]);
         setDatosPlatforms([]);
