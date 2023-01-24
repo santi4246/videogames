@@ -18,7 +18,7 @@ export default function Game () {
     }, [dispatch, id]);    
     return (
         <>
-            {game.name ? 
+            {game ? 
             <>
                 <Navbar title = {game.name}/>
                 <div className = {style.game}>
@@ -31,7 +31,7 @@ export default function Game () {
                             <h3>Rating: {game.rating}</h3>
                             <div>
                                 <h5>Genres: </h5>
-                                {game.genres.map((genre, index) => (
+                                {game.genres?.map((genre, index) => (
                                         <p key = { index }>{genre}</p>
                                     ))}
                             </div>
