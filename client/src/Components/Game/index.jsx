@@ -7,18 +7,18 @@ import style from './Game.module.css';
 import Navbar from "./Navbar";
 
 export default function Game () {
-    const { id } = useParams();    
+    const { id } = useParams();
     const dispatch = useDispatch();
     const game = useSelector(state => state.gameDetail);    
     useEffect(() => {
         dispatch(getDetail(id));        
         return () => {
-            dispatch(clearPage());            
+            dispatch(clearPage());
         }
     }, [dispatch, id]);    
     return (
         <>
-            {game ? 
+            {game && game.name ? 
             <>
                 <Navbar title = {game.name}/>
                 <div className = {style.game}>
