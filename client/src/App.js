@@ -7,7 +7,7 @@ import Home from './Components/Home';
 import Game from './Components/Game';
 import Create from './Components/Create';
 import axios from 'axios';
-axios.defaults.baseURL = 'https://videogames-4hv5.onrender.com/api';
+axios.defaults.baseURL = 'https://videogames-app-anav.onrender.com/api';
 
 function App() {  
   return (
